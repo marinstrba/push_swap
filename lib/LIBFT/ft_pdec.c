@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_pdec.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mstrba <mstrba@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/30 16:12:25 by mstrba            #+#    #+#             */
-/*   Updated: 2023/10/30 16:46:52 by mstrba           ###   ########.fr       */
+/*   Created: 2023/10/25 17:20:56 by mstrba            #+#    #+#             */
+/*   Updated: 2023/11/21 21:23:04 by mstrba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argv, char	**argv)
+int	ft_pdec(va_list args)
 {
-	if (!ft_check_input(argc, argv))
-	{
-		ft_print_error();
-		return (1);
-	}
-	else
-		ft_sort(argc, argv);
-	return (0);
+	int	n;
+	int	res;
+
+	n = va_arg(args, int);
+	res = ft_putnbr(n);
+	return (res);
 }

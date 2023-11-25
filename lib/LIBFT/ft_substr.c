@@ -1,28 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_input.c                                   :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mstrba <mstrba@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/30 16:21:19 by mstrba            #+#    #+#             */
-/*   Updated: 2023/10/30 16:37:17 by mstrba           ###   ########.fr       */
+/*   Created: 2023/10/21 13:06:08 by mstrba            #+#    #+#             */
+/*   Updated: 2023/10/26 13:12:39 by mstrba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-
-int	ft_check_input(int argc, char	**argv)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
+	char	*subs;
 	size_t	index;
+	size_t	s_len;
 
-	index = 1;
-	while (index < argc)
+	if (s == NULL)
+		return (NULL);
+	index = 0;
+	s_len = ft_strlen(s);
+	if (start >= s_len)
+		return (ft_strdup(""));
+	subs = (char *) malloc((len + 1) * sizeof(char));
+	if (subs == NULL)
+		return (NULL);
+	s += start;
+	while (index < len && *s)
 	{
-		if (!ft_check_string(argv[index]))
-			return (0);
+		subs[index] = *s;
+		s++;
 		index++;
 	}
-	return (1);
+	subs[index] = 0;
+	return (subs);
 }

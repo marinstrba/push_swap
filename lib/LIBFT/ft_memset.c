@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_string.c                                  :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mstrba <mstrba@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/30 16:37:26 by mstrba            #+#    #+#             */
-/*   Updated: 2023/10/30 16:40:12 by mstrba           ###   ########.fr       */
+/*   Created: 2023/10/18 15:20:09 by mstrba            #+#    #+#             */
+/*   Updated: 2023/10/18 16:23:28 by mstrba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	ft_check_string(char	*str)
+void	*ft_memset(void *ptr, int value, size_t num)
 {
-	size_t	index;
+	unsigned char	*a;
+	unsigned char	ch;
 
-	index = 0;
-	while (str[index] != '\0')
+	a = (unsigned char *)ptr;
+	ch = value;
+	while (num)
 	{
-		if (str[index] < '0' || str[index] > '9')
-			return (0);
-		index++;
+		*a = ch;
+		a++;
+		num--;
 	}
-	return (1);
+	return (ptr);
 }

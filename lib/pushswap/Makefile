@@ -5,7 +5,7 @@ NAME = pushswap.a
 
 SRCS = ft_add_node.c \
 			ft_arg_to_node.c \
-			ft_error_handler.c
+			ft_error_message.c
 OBJS = $(SRCS:.c=.o)
 
 $(NAME): $(OBJS)

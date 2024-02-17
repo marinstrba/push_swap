@@ -17,8 +17,8 @@ libft:
 pushswap:
 	$(MAKE) -C $(PUSHSWAP_DIR)
 
-server: libft pushswap
-	$(CC) $(CFLAGS) $(INCLUDES) src/push_swap.c $(LIBFT) $(PUSHSWAP) -o push_swap
+push_swap: libft pushswap
+	$(CC) $(CFLAGS) $(INCLUDES) src/push_swap.c -o push_swap $(PUSHSWAP) $(LIBFT)
 
 clean:
 	$(MAKE) -C $(LIBFT_DIR) clean
@@ -27,7 +27,7 @@ clean:
 fclean: clean
 	$(MAKE) -C $(LIBFT_DIR) fclean
 	$(MAKE) -C $(PUSHSWAP_DIR) fclean
-	rm -f server client
+	rm -f push_swap
 
 re: fclean all
 

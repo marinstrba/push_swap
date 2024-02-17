@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pushswap.h                                         :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maurian <maurian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/17 20:38:23 by maurian           #+#    #+#             */
-/*   Updated: 2024/02/17 23:03:09 by maurian          ###   ########.fr       */
+/*   Created: 2024/02/17 23:07:06 by maurian           #+#    #+#             */
+/*   Updated: 2024/02/17 23:07:36 by maurian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSHSWAP_H
-# define PUSHSWAP_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <stdio.h>
-# include <stdlib.h>
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+{
+	size_t		str_len;
+	char		*dp;
+	const char	*sp;
 
-typedef struct stack {
-
-  int value;
-  int index;
-
-  struct  stack  *next;
-  struct  stack  *prev;
-}         t_stack;
-
-void  ft_error_message(void);
-t_stack *ft_arg_to_node(char  **argv);
-void  ft_add_node(int  number, t_stack  **stack);
-
-
-#endif
+	str_len = ft_strlen(src);
+	dp = dst;
+	sp = src;
+	if (size == 0)
+		return (str_len);
+	while (*sp && size > 1)
+	{
+		*dp = *sp;
+		size--;
+		dp++;
+		sp++;
+	}
+	*dp = '\0';
+	return (str_len);
+}

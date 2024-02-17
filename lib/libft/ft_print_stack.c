@@ -1,34 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pushswap.h                                         :+:      :+:    :+:   */
+/*   ft_print_stack.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maurian <maurian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/17 20:38:23 by maurian           #+#    #+#             */
-/*   Updated: 2024/02/17 23:03:09 by maurian          ###   ########.fr       */
+/*   Created: 2024/02/17 23:41:24 by maurian           #+#    #+#             */
+/*   Updated: 2024/02/17 23:44:23 by maurian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSHSWAP_H
-# define PUSHSWAP_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <stdio.h>
-# include <stdlib.h>
+void ft_print_stack(t_stack *stack)
+{
+  t_stack *tmp;
 
-typedef struct stack {
-
-  int value;
-  int index;
-
-  struct  stack  *next;
-  struct  stack  *prev;
-}         t_stack;
-
-void  ft_error_message(void);
-t_stack *ft_arg_to_node(char  **argv);
-void  ft_add_node(int  number, t_stack  **stack);
-
-
-#endif
+  tmp = stack;
+  while (tmp != NULL)
+  {
+    printf("Value: %d, Index: %d\n", tmp->value, tmp->index);
+    tmp = tmp->next;
+  }
+}

@@ -8,7 +8,11 @@ SRCS = ft_atoi.c \
        ft_check_number.c \
        ft_isdigit.c	\
 			 ft_split.c \
-			 ft_free_arr.c
+			 ft_free_arr.c \
+			 ft_strlcpy.c \
+			 ft_strlen.c \
+			 ft_free_list.c \
+			 ft_print_stack.c
 
 OBJS = $(SRCS:.c=.o)
 

@@ -3,8 +3,9 @@ CFLAGS = -Wall -Wextra -Werror
 
 NAME = pushswap.a
 
-SRCS = add_node.c \
-		convert_str_to_linkedlist.c
+SRCS = ft_add_node.c \
+			ft_arg_to_node.c \
+			ft_error_handler.c
 OBJS = $(SRCS:.c=.o)
 
 $(NAME): $(OBJS)

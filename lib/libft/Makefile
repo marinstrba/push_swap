@@ -5,8 +5,10 @@ NAME = libft.a
 
 SRCS = ft_atoi.c \
        ft_putstr.c \
-       check_number.c \
-       ft_isdigit.c
+       ft_check_number.c \
+       ft_isdigit.c	\
+			 ft_split.c \
+			 ft_free_arr.c
 
 OBJS = $(SRCS:.c=.o)
 

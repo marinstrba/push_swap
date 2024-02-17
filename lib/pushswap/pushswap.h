@@ -6,7 +6,7 @@
 /*   By: maurian <maurian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 20:38:23 by maurian           #+#    #+#             */
-/*   Updated: 2024/02/17 22:08:35 by maurian          ###   ########.fr       */
+/*   Updated: 2024/02/17 22:42:08 by maurian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,9 @@ typedef struct stack {
   struct  stack  *prev;
 }         t_stack;
 
-void  add_node(int  number);
-void  convert_str_to_linkedlist(char  **argv);
+void  ft_error_message(void);
+void  ft_add_node(int  number);
+t_stack *ft_arg_to_node(char  **argv)
 
 
 #endif

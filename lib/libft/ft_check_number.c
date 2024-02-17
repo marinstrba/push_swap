@@ -6,13 +6,13 @@
 /*   By: maurian <maurian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 20:46:20 by maurian           #+#    #+#             */
-/*   Updated: 2024/02/17 21:21:50 by maurian          ###   ########.fr       */
+/*   Updated: 2024/02/17 22:11:19 by maurian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int check_number(char *number)
+int ft_check_number(char *number)
 {
   int index;
 

@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   convert_str_to_linkedlist.c                        :+:      :+:    :+:   */
+/*   ft_free_arr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maurian <maurian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/17 20:59:15 by maurian           #+#    #+#             */
-/*   Updated: 2024/02/17 21:06:27 by maurian          ###   ########.fr       */
+/*   Created: 2024/02/17 22:36:27 by maurian           #+#    #+#             */
+/*   Updated: 2024/02/17 22:39:08 by maurian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pushswap.h"
+#include "libft.h"
 
-void  convert_str_to_linkedlist(char  **argv)
+void ft_free_arr(char **arr)
 {
-  
+  if (arr == NULL)
+    return ;
+
+  char **temp = arr;
+  while (*temp != NULL)
+  {
+    free(*temp);
+    temp++;
+  }
+  free(arr);
 }

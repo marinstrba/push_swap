@@ -1,13 +1,10 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
-NAME = libft.a
+NAME = pushswap.a
 
-SRCS = ft_atoi.c \
-       ft_putstr.c \
-       check_number.c \
-       ft_isdigit.c
-
+SRCS = add_node.c \
+		convert_str_to_linkedlist.c
 OBJS = $(SRCS:.c=.o)
 
 $(NAME): $(OBJS)

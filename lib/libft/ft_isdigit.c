@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maurian <maurian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/17 21:07:13 by maurian           #+#    #+#             */
-/*   Updated: 2024/02/17 21:20:26 by maurian          ###   ########.fr       */
+/*   Created: 2024/02/17 21:20:04 by maurian           #+#    #+#             */
+/*   Updated: 2024/02/17 21:20:12 by maurian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <stdio.h>
-# include <stdlib.h>
-
-int	ft_isdigit(int c);
-void	ft_putstr(char *s);
-int	ft_atoi(const char *str);
-int check_number(char *number);
-
-#endif
+int	ft_isdigit(int c)
+{
+	if (c <= 57 && c >= 48)
+		return (1);
+	return (0);
+}

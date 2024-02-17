@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   pushswap.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maurian <maurian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/17 21:07:13 by maurian           #+#    #+#             */
-/*   Updated: 2024/02/17 21:20:26 by maurian          ###   ########.fr       */
+/*   Created: 2024/02/17 20:38:23 by maurian           #+#    #+#             */
+/*   Updated: 2024/02/17 22:08:35 by maurian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#ifndef PUSHSWAP_H
+# define PUSHSWAP_H
 
 # include <unistd.h>
 # include <stdio.h>
 # include <stdlib.h>
 
-int	ft_isdigit(int c);
-void	ft_putstr(char *s);
-int	ft_atoi(const char *str);
-int check_number(char *number);
+typedef struct stack {
+
+  int value;
+  int index;
+
+  struct  stack  *next;
+  struct  stack  *prev;
+}         t_stack;
+
+void  add_node(int  number);
+void  convert_str_to_linkedlist(char  **argv);
+
 
 #endif

@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   check_number.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maurian <maurian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/17 21:07:13 by maurian           #+#    #+#             */
-/*   Updated: 2024/02/17 21:20:26 by maurian          ###   ########.fr       */
+/*   Created: 2024/02/17 20:46:20 by maurian           #+#    #+#             */
+/*   Updated: 2024/02/17 21:21:50 by maurian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <stdio.h>
-# include <stdlib.h>
+int check_number(char *number)
+{
+  int index;
 
-int	ft_isdigit(int c);
-void	ft_putstr(char *s);
-int	ft_atoi(const char *str);
-int check_number(char *number);
-
-#endif
+  index = 0;
+  while (number[index])
+    if(ft_isdigit(number[index]))
+      return (1);
+  return (0);
+}

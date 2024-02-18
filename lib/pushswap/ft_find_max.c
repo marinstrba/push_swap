@@ -1,25 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_stack.c                                   :+:      :+:    :+:   */
+/*   ft_find_max.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maurian <maurian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/17 23:41:24 by maurian           #+#    #+#             */
-/*   Updated: 2024/02/18 21:26:27 by maurian          ###   ########.fr       */
+/*   Created: 2024/02/18 22:22:54 by maurian           #+#    #+#             */
+/*   Updated: 2024/02/18 22:28:12 by maurian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "pushswap.h"
+#include "../libft/libft.h"
 
-void ft_print_stack(t_stack *stack)
+t_stack *ft_find_max(t_stack  *stack)
 {
+  int     max_value;
   t_stack *tmp;
+  t_stack *max_node;
 
   tmp = stack;
+  max_node = NULL;
+  max_value = INT_MIN;
+
   while (tmp != NULL)
   {
-    printf("Value: %d, Index: %d\n", tmp->value, tmp->index);
+    if (tmp->value > max_value)
+    {
+      max_value = tmp->value;
+      max_node = tmp;
+    }
     tmp = tmp->next;
   }
+  return (max_node);
 }

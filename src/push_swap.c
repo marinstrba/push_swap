@@ -6,16 +6,16 @@
 /*   By: maurian <maurian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 18:47:39 by maurian           #+#    #+#             */
-/*   Updated: 2024/02/17 23:46:06 by maurian          ###   ########.fr       */
+/*   Updated: 2024/02/18 21:49:00 by maurian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../lib/pushswap/pushswap.h"
 #include "../lib/libft/libft.h"
+#include "sort.h"
 
 
 t_stack *args_checker(int argc, char **argv);
-void    ft_sort(t_stack **stack_a, t_stack **stack_b);
 
 int main (int argc, char  **argv)
 {
@@ -25,10 +25,17 @@ int main (int argc, char  **argv)
   stack_a = NULL;
   stack_b = NULL;
   stack_a = args_checker(argc, argv);
+  if (ft_stack_length(stack_a) == 1)
+  {
+    ft_print_stack(stack_a);
+    ft_free_list(stack_a);
+    return (0);
+  }
   ft_sort(&stack_a, &stack_b);
   ft_print_stack(stack_a);
   ft_free_list(stack_a);
-  ft_free_list(stack_b);
+  (void)stack_b;
+  //ft_free_list(stack_b);
   return (0);
 }
 
@@ -56,3 +63,8 @@ t_stack *args_checker(int argc, char **argv)
   }
   return (stack);
 }
+
+// int     ft_check_duplicate(t_stack  **stack)
+// {
+//  //also check convert to long int and check for integer overflow
+// }

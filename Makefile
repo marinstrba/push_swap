@@ -9,6 +9,10 @@ PUSHSWAP = $(PUSHSWAP_DIR)/pushswap.a
 
 INCLUDES = -I$(LIBFT_DIR) -I$(PUSHSWAP_DIR)
 
+SRC_DIR = src
+SRC_FILES = $(SRC_DIR)/push_swap.c $(SRC_DIR)/sort_stack.c $(SRC_DIR)/operations.c
+OBJ_FILES = $(SRC_FILES:.c=.o)
+
 all: libft pushswap push_swap
 
 libft:
@@ -17,12 +21,16 @@ libft:
 pushswap:
 	$(MAKE) -C $(PUSHSWAP_DIR)
 
-push_swap: libft pushswap
-	$(CC) $(CFLAGS) $(INCLUDES) src/push_swap.c -o push_swap $(PUSHSWAP) $(LIBFT)
+push_swap: $(OBJ_FILES)
+	$(CC) $(CFLAGS) $(OBJ_FILES) -o $@ $(PUSHSWAP) $(LIBFT)
+
+%.o: %.c
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 clean:
 	$(MAKE) -C $(LIBFT_DIR) clean
 	$(MAKE) -C $(PUSHSWAP_DIR) clean
+	rm -f $(SRC_DIR)/*.o
 
 fclean: clean
 	$(MAKE) -C $(LIBFT_DIR) fclean

@@ -6,7 +6,7 @@
 /*   By: maurian <maurian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 21:07:13 by maurian           #+#    #+#             */
-/*   Updated: 2024/02/17 23:43:56 by maurian          ###   ########.fr       */
+/*   Updated: 2024/02/18 19:44:33 by maurian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <unistd.h>
 # include <stdio.h>
 # include <stdlib.h>
+# include <limits.h>
 # include "../pushswap/pushswap.h"
 
 int	ft_isdigit(int c);

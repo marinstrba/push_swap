@@ -6,7 +6,7 @@
 /*   By: maurian <maurian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 23:34:41 by maurian           #+#    #+#             */
-/*   Updated: 2024/02/17 23:39:19 by maurian          ###   ########.fr       */
+/*   Updated: 2024/02/18 21:47:12 by maurian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,5 @@ void ft_free_list(t_stack *stack)
     stack = stack->next;
     free(tmp);
   }
+  free(stack);
 }

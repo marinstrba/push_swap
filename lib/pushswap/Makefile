@@ -5,7 +5,11 @@ NAME = pushswap.a
 
 SRCS = ft_add_node.c \
 			ft_arg_to_node.c \
-			ft_error_message.c
+			ft_error_message.c \
+			ft_stack_is_sorted.c \
+			ft_stack_length.c \
+			ft_find_min.c \
+			ft_find_max.c
 OBJS = $(SRCS:.c=.o)
 
 $(NAME): $(OBJS)

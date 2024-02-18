@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_stack.c                                   :+:      :+:    :+:   */
+/*   sort.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maurian <maurian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/17 23:41:24 by maurian           #+#    #+#             */
-/*   Updated: 2024/02/18 21:26:27 by maurian          ###   ########.fr       */
+/*   Created: 2024/02/18 20:55:40 by maurian           #+#    #+#             */
+/*   Updated: 2024/02/18 21:56:35 by maurian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef SORT_H
+# define SORT_H
 
-void ft_print_stack(t_stack *stack)
-{
-  t_stack *tmp;
+# include <unistd.h>
+# include <stdio.h>
+# include <stdlib.h>
+# include <limits.h>
+# include "../lib/pushswap/pushswap.h"
+# include "../lib/libft/libft.h"
 
-  tmp = stack;
-  while (tmp != NULL)
-  {
-    printf("Value: %d, Index: %d\n", tmp->value, tmp->index);
-    tmp = tmp->next;
-  }
-}
+void    ft_sa(t_stack **stack);
+void    ft_ra(t_stack **stack);
+void    ft_rra(t_stack **stack);
+void    ft_sort(t_stack **stack_a, t_stack **stack_b);
+
+#endif

@@ -6,7 +6,7 @@
 /*   By: mstrba <mstrba@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 18:47:39 by maurian           #+#    #+#             */
-/*   Updated: 2024/02/19 10:12:46 by mstrba           ###   ########.fr       */
+/*   Updated: 2024/02/19 13:31:56 by mstrba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,18 @@ int	main(int argc, char	**argv)
 	{
 		ft_print_stack(stack_a);
 		ft_free_list(stack_a);
-		return (0);
+		return (EXIT_SUCCESS);
+	}
+	if (ft_has_duplicate(stack_a))
+	{
+		ft_free_list(stack_a);
+		return (EXIT_FAILURE);
 	}
 	ft_sort(&stack_a, &stack_b);
 	ft_print_stack(stack_a);
 	ft_free_list(stack_a);
 	ft_free_list(stack_b);
-	return (0);
+	return (EXIT_SUCCESS);
 }
 
 t_stack	*args_checker(int argc, char **argv)
@@ -62,7 +67,4 @@ t_stack	*args_checker(int argc, char **argv)
 	return (stack);
 }
 
-// int     ft_check_duplicate(t_stack  **stack)
-// {
-//  //also check convert to long int and check for integer overflow
-// }
+// I have to check duplicate

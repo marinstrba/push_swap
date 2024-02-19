@@ -3,16 +3,16 @@ CFLAGS = -Wall -Wextra -Werror
 
 NAME = libft.a
 
-SRCS = ft_atoi.c \
+SRCS = ft_atol.c \
        ft_putstr.c \
        ft_check_number.c \
        ft_isdigit.c	\
-			 ft_split.c \
-			 ft_free_arr.c \
-			 ft_strlcpy.c \
-			 ft_strlen.c \
-			 ft_free_list.c \
-			 ft_print_stack.c
+		ft_split.c \
+		ft_free_arr.c \
+		ft_strlcpy.c \
+		ft_strlen.c \
+		ft_free_list.c \
+		ft_print_stack.c
 
 OBJS = $(SRCS:.c=.o)
 

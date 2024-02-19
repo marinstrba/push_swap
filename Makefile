@@ -10,7 +10,7 @@ PUSHSWAP = $(PUSHSWAP_DIR)/pushswap.a
 INCLUDES = -I$(LIBFT_DIR) -I$(PUSHSWAP_DIR)
 
 SRC_DIR = src
-SRC_FILES = $(SRC_DIR)/push_swap.c $(SRC_DIR)/sort_stack.c $(SRC_DIR)/operations.c
+SRC_FILES = $(SRC_DIR)/push_swap.c $(SRC_DIR)/sort_stack.c $(SRC_DIR)/operations.c $(SRC_DIR)/more_operations.c
 OBJ_FILES = $(SRC_FILES:.c=.o)
 
 all: libft pushswap push_swap

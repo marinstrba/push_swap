@@ -6,16 +6,16 @@
 /*   By: mstrba <mstrba@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 20:51:33 by maurian           #+#    #+#             */
-/*   Updated: 2024/02/19 10:12:10 by mstrba           ###   ########.fr       */
+/*   Updated: 2024/02/19 13:13:40 by mstrba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	result_calc(const char *str, int index)
+long	result_calc(const char *str, int index)
 {
-	int	res;
-	int	increment;
+	long	res;
+	long	increment;
 
 	res = 0;
 	increment = 1;
@@ -42,10 +42,10 @@ int	get_sign(const char **str)
 	return (1);
 }
 
-int	ft_atoi(const char *str)
+long	ft_atol(const char *str)
 {
 	const char	*start;
-	int			res;
+	long		res;
 	int			index;
 	int			sign;
 

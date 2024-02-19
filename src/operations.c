@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   operations.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mstrba <mstrba@student.42.fr>              +#+  +:+       +#+        */
+/*   By: maurian <maurian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 20:14:47 by maurian           #+#    #+#             */
-/*   Updated: 2024/02/19 16:15:50 by mstrba           ###   ########.fr       */
+/*   Updated: 2024/02/19 21:19:04 by maurian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	ft_ra(t_stack **stack, bool	print, char letter)
 	second_node->prev = NULL;
 	*stack = second_node;
 	if (print)
-		printf("s%c\n", letter);
+		printf("r%c\n", letter);
 	ft_set_index(&(*stack));
 }
 
@@ -69,13 +69,14 @@ void	ft_rra(t_stack **stack, bool	print, char letter)
 	while (last_node->next != NULL)
 		last_node = last_node->next;
 	second_to_last_node = last_node->prev;
-	last_node->next = first_node;
-	last_node->prev = NULL;
-	first_node->prev = last_node;
-	second_to_last_node->next = NULL;
-	*stack = last_node;
+  if (second_to_last_node)
+    second_to_last_node->next = NULL;
+  last_node->next = first_node;
+  last_node->prev = NULL;
+  first_node->prev = last_node;
+	(*stack) = last_node;
 	if (print)
-		printf("s%c\n", letter);
+		printf("rr%c\n", letter);
 	ft_set_index(&(*stack));
 }
 

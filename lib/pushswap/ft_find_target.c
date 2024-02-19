@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_find_target.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mstrba <mstrba@student.42.fr>              +#+  +:+       +#+        */
+/*   By: maurian <maurian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 12:17:31 by mstrba            #+#    #+#             */
-/*   Updated: 2024/02/19 16:56:15 by mstrba           ###   ########.fr       */
+/*   Updated: 2024/02/19 21:25:14 by maurian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_find_target_a(t_stack	**stack_a, t_stack	**stack_b)
 	t_stack	*tmp;
 	t_stack	*target_node;
 	t_stack	*b_curr;
-	long	match;
+	long		match;
 
 	tmp = (*stack_a);
 	while (tmp != NULL)
@@ -53,10 +53,10 @@ void	ft_find_target_b(t_stack	**stack_a, t_stack	**stack_b)
 	while (tmp != NULL)
 	{
 		match = LONG_MAX;
-		a_curr = (*stack_b);
+		a_curr = (*stack_a);
 		while (a_curr != NULL)
 		{
-			if (a_curr->value < tmp->value && a_curr->value > match)
+			if (a_curr->value > tmp->value && a_curr->value < match)
 			{
 				match = a_curr->value;
 				target_node = a_curr;

@@ -6,7 +6,7 @@
 /*   By: mstrba <mstrba@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 22:22:54 by maurian           #+#    #+#             */
-/*   Updated: 2024/02/19 10:11:12 by mstrba           ###   ########.fr       */
+/*   Updated: 2024/02/19 16:18:42 by mstrba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ t_stack	*ft_find_min(t_stack	*stack)
 	min_value = INT_MAX;
 	while (tmp != NULL)
 	{
-		if (tmp->value > min_value)
+		if (tmp->value < min_value)
 		{
 			min_value = tmp->value;
 			min_node = tmp;

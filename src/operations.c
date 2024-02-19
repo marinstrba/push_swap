@@ -6,7 +6,7 @@
 /*   By: mstrba <mstrba@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 20:14:47 by maurian           #+#    #+#             */
-/*   Updated: 2024/02/19 15:29:47 by mstrba           ###   ########.fr       */
+/*   Updated: 2024/02/19 16:15:50 by mstrba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,10 +86,13 @@ void	ft_pa(t_stack	**stack_a, t_stack	**stack_b, bool	print)
 	if (!(*stack_b))
 		return ;
 	swapped_node = (*stack_b);
-	ft_add_node((*stack_b)->value, &(*stack_a));
 	*stack_b = (*stack_b)->next;
-	free((*stack_b)->prev);
-	(*stack_b)->prev = NULL;
+	if (*stack_b)
+		(*stack_b)->prev = NULL;
+	swapped_node->next = (*stack_a);
+	if ((*stack_a))
+		(*stack_a)->prev = swapped_node;
+	(*stack_a) = swapped_node;
 	if (print)
 		ft_putstr("pa\n");
 	ft_set_index(&(*stack_a));
@@ -103,10 +106,13 @@ void	ft_pb(t_stack	**stack_a, t_stack	**stack_b, bool	print)
 	if (!(*stack_a))
 		return ;
 	swapped_node = (*stack_a);
-	ft_add_node((*stack_a)->value, &(*stack_b));
 	*stack_a = (*stack_a)->next;
-	free((*stack_a)->prev);
-	(*stack_a)->prev = NULL;
+	if (*stack_a)
+		(*stack_a)->prev = NULL;
+	swapped_node->next = (*stack_b);
+	if ((*stack_b))
+		(*stack_b)->prev = swapped_node;
+	(*stack_b) = swapped_node;
 	if (print)
 		ft_putstr("pb\n");
 	ft_set_index(&(*stack_a));

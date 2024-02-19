@@ -6,65 +6,67 @@
 /*   By: mstrba <mstrba@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 12:17:31 by mstrba            #+#    #+#             */
-/*   Updated: 2024/02/19 14:46:20 by mstrba           ###   ########.fr       */
+/*   Updated: 2024/02/19 16:05:02 by mstrba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
 #include "../libft/libft.h"
 
-t_stack	*ft_find_target_a(t_stack	**stack_a, t_stack	**stack_b)
+void	ft_find_target_a(t_stack	**stack_a, t_stack	**stack_b)
 {
 	t_stack	*tmp;
 	t_stack	*target_node;
-	t_stack	*stack_b_current;
-	long	best_match_index;
+	t_stack	*b_curr;
+	long	match;
 
 	tmp = (*stack_a);
 	while (tmp != NULL)
 	{
-		best_match_index = LONG_MIN;
-		stack_b_current = (*stack_b);
-		while (stack_b_current != NULL)
+		match = LONG_MIN;
+		b_curr = (*stack_b);
+		while (b_curr != NULL)
 		{
-			if (stack_b_current->value < tmp->value
-				&& stack_b_current->value > best_match_index)
+			if (b_curr->value < tmp->value && b_curr->value > match)
 			{
-				best_match_index = stack_b_current->value;
-				target_node = stack_b_current;
+				match = b_curr->value;
+				target_node = b_curr;
 			}
-			stack_b_current = stack_b_current->next;
+			b_curr = b_curr->next;
 		}
-		if (best_match_index == LONG_MIN)
+		if (match == LONG_MIN)
 			tmp->target_node = ft_find_max((*stack_b));
+		else
+			tmp->target_node = target_node;
 		tmp = tmp->next;
 	}
 }
 
-t_stack	*ft_find_target_b(t_stack	**stack_a, t_stack	**stack_b)
+void	ft_find_target_b(t_stack	**stack_a, t_stack	**stack_b)
 {
 	t_stack	*tmp;
 	t_stack	*target_node;
-	t_stack	*stack_a_current;
-	long	best_match_index;
+	t_stack	*a_curr;
+	long	match;
 
 	tmp = (*stack_b);
 	while (tmp != NULL)
 	{
-		best_match_index = LONG_MAX;
-		stack_a_current = (*stack_b);
-		while (stack_a_current != NULL)
+		match = LONG_MAX;
+		a_curr = (*stack_b);
+		while (a_curr != NULL)
 		{
-			if (stack_a_current->value < tmp->value
-				&& stack_a_current->value > best_match_index)
+			if (a_curr->value < tmp->value && a_curr->value > match)
 			{
-				best_match_index = stack_a_current->value;
-				target_node = stack_a_current;
+				match = a_curr->value;
+				target_node = a_curr;
 			}
-			stack_a_current = stack_a_current->next;
+			a_curr = a_curr->next;
 		}
-		if (best_match_index == LONG_MAX)
-			tmp->target_node = ft_find_max((*stack_b));
+		if (match == LONG_MAX)
+			tmp->target_node = ft_find_max((*stack_a));
+		else
+			tmp->target_node = target_node;
 		tmp = tmp->next;
 	}
 }

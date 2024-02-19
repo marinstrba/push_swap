@@ -14,7 +14,7 @@ SRCS = ft_add_node.c \
 			ft_set_index.c \
 			ft_cost_analysis.c \
 			ft_find_target.c \
-			ft_has_duplicate.c \
+			ft_check_duplicate.c \
 			ft_set_cheapest.c \
 			ft_move.c \
 			ft_min_on_top.c

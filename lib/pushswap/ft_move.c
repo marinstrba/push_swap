@@ -6,7 +6,7 @@
 /*   By: mstrba <mstrba@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 14:38:48 by mstrba            #+#    #+#             */
-/*   Updated: 2024/02/19 15:51:47 by mstrba           ###   ########.fr       */
+/*   Updated: 2024/02/19 16:07:12 by mstrba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,14 @@ void	ft_move_a_to_b(t_stack	**stack_a, t_stack	**stack_b)
 	else if (!(cheapest_node->above_median)
 		&& !(cheapest_node->target_node->above_median))
 		ft_rrrb(&(*stack_a), &(*stack_b), cheapest_node);
-	ft_prep_for_push(&(*stack_a), cheapest_node, 'a');
-	ft_prep_for_push(&(*stack_b), cheapest_node, 'b');
+	ft_prepare_for_push(&(*stack_a), cheapest_node, 'a');
+	ft_prepare_for_push(&(*stack_b), cheapest_node, 'b');
 	ft_pa(&(*stack_a), &(*stack_b), false);
 }
 
 void	ft_move_b_to_a(t_stack	**stack_a, t_stack	**stack_b)
 {
-	ft_prep_for_push();
+	ft_prepare_for_push(&(*stack_a), (*stack_b)->target_node, 'b');
 	ft_pa(&(*stack_a), &(*stack_b), false);
 }
 

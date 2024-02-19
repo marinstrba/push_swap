@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_free_arr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mstrba <mstrba@student.42.fr>              +#+  +:+       +#+        */
+/*   By: maurian <maurian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 22:36:27 by maurian           #+#    #+#             */
-/*   Updated: 2024/02/19 10:08:50 by mstrba           ###   ########.fr       */
+/*   Updated: 2024/02/19 23:27:10 by maurian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,13 @@
 
 void	ft_free_arr(char **arr)
 {
-	char	**temp;
-
+	int i = 0;
 	if (arr == NULL)
 		return ;
-	temp = arr;
-	while (*temp != NULL)
+	while (arr[i] != NULL)
 	{
-		free(*temp);
-		temp++;
+		free(arr[i]);
+		++i;
 	}
 	free(arr);
 }

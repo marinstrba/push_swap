@@ -6,7 +6,7 @@
 /*   By: maurian <maurian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 20:59:15 by maurian           #+#    #+#             */
-/*   Updated: 2024/02/19 22:48:58 by maurian          ###   ########.fr       */
+/*   Updated: 2024/02/19 23:29:38 by maurian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,28 +28,30 @@ bool	is_string_empty_or_delim(const char *s, char delim)
 
 t_stack	*ft_arg_to_node(char	**argv)
 {
+	int			index;
 	char		**numbers;
 	t_stack		*stack;
 
+	stack = NULL;
+	index = 0;
 	if (is_string_empty_or_delim(argv[1], ' '))
 		exit (-1);
 	numbers = ft_split(argv[1], ' ');
-	if (numbers == NULL || numbers[0] == NULL)
+	if (numbers == NULL)
 	{
-		if (numbers != NULL)
-			free(numbers);
+		free(numbers);
 		return (NULL);
 	}
-	while (*numbers)
+	while (numbers[index])
 	{
-		if (ft_check_number(*numbers))
-			ft_add_node(ft_atol(*numbers), &stack);
+		if (ft_check_number(numbers[index]))
+			ft_add_node(ft_atol(numbers[index]), &stack);
 		else
 		{
 			ft_free_list(stack);
 			ft_error_message();
 		}
-		numbers++;
+		index++;
 	}
 	ft_free_arr(numbers);
 	return (stack);

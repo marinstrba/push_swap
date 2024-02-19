@@ -6,7 +6,7 @@
 /*   By: maurian <maurian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 20:14:47 by maurian           #+#    #+#             */
-/*   Updated: 2024/02/19 21:19:04 by maurian          ###   ########.fr       */
+/*   Updated: 2024/02/19 23:39:07 by maurian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void	ft_sa(t_stack **stack, bool	print, char letter)
 	if (third_node != NULL)
 		third_node->prev = first_node;
 	*stack = second_node;
+	print = true;
 	if (print)
 		printf("s%c\n", letter);
 	ft_set_index(&(*stack));
@@ -51,6 +52,7 @@ void	ft_ra(t_stack **stack, bool	print, char letter)
 	first_node->next = NULL;
 	second_node->prev = NULL;
 	*stack = second_node;
+	print = true;
 	if (print)
 		printf("r%c\n", letter);
 	ft_set_index(&(*stack));
@@ -75,6 +77,7 @@ void	ft_rra(t_stack **stack, bool	print, char letter)
   last_node->prev = NULL;
   first_node->prev = last_node;
 	(*stack) = last_node;
+	print = true;
 	if (print)
 		printf("rr%c\n", letter);
 	ft_set_index(&(*stack));
@@ -94,6 +97,7 @@ void	ft_pa(t_stack	**stack_a, t_stack	**stack_b, bool	print)
 	if ((*stack_a))
 		(*stack_a)->prev = swapped_node;
 	(*stack_a) = swapped_node;
+	print = true;
 	if (print)
 		ft_putstr("pa\n");
 	ft_set_index(&(*stack_a));
@@ -114,6 +118,7 @@ void	ft_pb(t_stack	**stack_a, t_stack	**stack_b, bool	print)
 	if ((*stack_b))
 		(*stack_b)->prev = swapped_node;
 	(*stack_b) = swapped_node;
+	print = true;
 	if (print)
 		ft_putstr("pb\n");
 	ft_set_index(&(*stack_a));

@@ -6,7 +6,7 @@
 /*   By: maurian <maurian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 18:47:39 by maurian           #+#    #+#             */
-/*   Updated: 2024/02/19 22:50:50 by maurian          ###   ########.fr       */
+/*   Updated: 2024/02/19 23:39:54 by maurian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	main(int argc, char	**argv)
 		return (EXIT_FAILURE);
 	}
 	ft_sort(&stack_a, &stack_b);
-	ft_print_stack(stack_a);
+	//ft_print_stack(stack_a);
 	ft_free_list(stack_a);
 	ft_free_list(stack_b);
 	return (EXIT_SUCCESS);

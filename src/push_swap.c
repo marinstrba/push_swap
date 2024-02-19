@@ -6,7 +6,7 @@
 /*   By: mstrba <mstrba@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 18:47:39 by maurian           #+#    #+#             */
-/*   Updated: 2024/02/19 13:31:56 by mstrba           ###   ########.fr       */
+/*   Updated: 2024/02/19 17:03:58 by mstrba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ t_stack	*args_checker(int argc, char **argv)
 		while (index < argc)
 		{
 			if (ft_check_number(argv[index]))
-				ft_add_node(ft_atoi(argv[index]), &stack);
+				ft_add_node(atol(argv[index]), &stack);
 			else
 				ft_error_message();
 			index++;

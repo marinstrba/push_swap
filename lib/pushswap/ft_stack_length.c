@@ -6,7 +6,7 @@
 /*   By: mstrba <mstrba@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 20:00:04 by maurian           #+#    #+#             */
-/*   Updated: 2024/02/19 16:26:10 by mstrba           ###   ########.fr       */
+/*   Updated: 2024/02/19 16:45:20 by mstrba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ int	ft_stack_length(t_stack *stack)
 	while (tmp != NULL)
 	{
 		stack_length++;
-		printf("AHOJ");
 		tmp = tmp->next;
 	}
 	return (stack_length);

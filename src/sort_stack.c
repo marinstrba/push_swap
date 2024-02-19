@@ -6,7 +6,7 @@
 /*   By: mstrba <mstrba@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 19:51:28 by maurian           #+#    #+#             */
-/*   Updated: 2024/02/19 16:24:53 by mstrba           ###   ########.fr       */
+/*   Updated: 2024/02/19 17:00:16 by mstrba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,12 +54,22 @@ void	ft_stack_sort_n(t_stack ***stack_a, t_stack ***stack_b)
 		ft_move_a_to_b(&(**stack_a), &(**stack_b));
 	}
 	ft_stack_sort_3(&(*stack_a));
+	printf("STACK A:\n");
+	ft_print_stack((**stack_a));
+	printf("STACK B:\n");
+	ft_print_stack((**stack_b));
+	printf("/------------------------------/\n");
 	while ((**stack_b))
 	{
 		ft_set_index(&(**stack_a));
 		ft_set_index(&(**stack_b));
 		ft_find_target_b(&(**stack_a), &(**stack_b));
 		ft_move_b_to_a(&(**stack_a), &(**stack_b));
+		printf("STACK A:\n");
+		ft_print_stack((**stack_a));
+		printf("STACK B:\n");
+		ft_print_stack((**stack_b));
+		printf("/------------------------------/\n");
 	}
 	ft_set_index(&(**stack_a));
 	ft_min_on_top(&(**stack_a));

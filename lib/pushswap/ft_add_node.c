@@ -6,7 +6,7 @@
 /*   By: mstrba <mstrba@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 20:49:02 by maurian           #+#    #+#             */
-/*   Updated: 2024/02/19 13:48:08 by mstrba           ###   ########.fr       */
+/*   Updated: 2024/02/19 17:02:46 by mstrba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ void	ft_add_node(long number, t_stack	**stack)
 	{
 		ft_free_list((*stack));
 		ft_putstr("Integer overflow.");
+		printf("%ld\n", number);
 		exit (-1);
 	}
 	ft_init_stack(&new_node, (int)number);

@@ -6,7 +6,7 @@
 /*   By: mstrba <mstrba@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 12:17:31 by mstrba            #+#    #+#             */
-/*   Updated: 2024/02/19 16:05:02 by mstrba           ###   ########.fr       */
+/*   Updated: 2024/02/19 16:56:15 by mstrba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void	ft_find_target_b(t_stack	**stack_a, t_stack	**stack_b)
 			a_curr = a_curr->next;
 		}
 		if (match == LONG_MAX)
-			tmp->target_node = ft_find_max((*stack_a));
+			tmp->target_node = ft_find_min((*stack_a));
 		else
 			tmp->target_node = target_node;
 		tmp = tmp->next;

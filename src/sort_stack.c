@@ -6,7 +6,7 @@
 /*   By: maurian <maurian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 19:51:28 by maurian           #+#    #+#             */
-/*   Updated: 2024/02/18 22:35:39 by maurian          ###   ########.fr       */
+/*   Updated: 2024/02/19 08:56:22 by maurian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,25 @@ void    ft_stack_sort_3(t_stack ***stack)
   }
 }
 
-void    ft_stack_sort_n(void)
+void    ft_stack_sort_n(t_stack ***stack_a, t_stack ***stack_b)
 {
-  printf("AHOJ\n");
+  size_t  stack_length;
+
+  stack_length = ft_stack_length((**stack_a));
+  if (stack_length > 3 && !ft_stack_is_sorted((**stack_a)))
+    ft_pb();
+  if (stack_length > 3 && !ft_stack_is_sorted((**stack_a)))
+    ft_pb();
+  while (stack_length > 3 && !ft_stack_is_sorted((**stack_a)))
+  {
+
+  }
+  ft_stack_sort_3();
+  while ()
+  {
+
+  }
+  
 }
 
 void    ft_sort(t_stack **stack_a, t_stack **stack_b)
@@ -49,12 +65,6 @@ void    ft_sort(t_stack **stack_a, t_stack **stack_b)
     else if (ft_stack_length((*stack_a)) == 3)
       ft_stack_sort_3(&stack_a);
     else
-    {
-      ft_pb();
-      ft_pb();
-      ft_stack_sort_n();
-    }
+      ft_stack_sort_n(&stack_a, &stack_b);
   }
-  // if more then 3 we have to implement turks algorithm 
-  // we have to implement functions: stack_sort_n + implementation of each action (ss, rr,rrr, pa, pb)
-}
+  }

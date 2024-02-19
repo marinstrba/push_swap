@@ -6,7 +6,7 @@
 /*   By: mstrba <mstrba@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 19:51:28 by maurian           #+#    #+#             */
-/*   Updated: 2024/02/19 09:58:18 by mstrba           ###   ########.fr       */
+/*   Updated: 2024/02/19 10:34:57 by mstrba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,14 +40,14 @@ void	ft_stack_sort_n(t_stack ***stack_a, t_stack ***stack_b)
 
 	stack_length = ft_stack_length((**stack_a));
 	if (stack_length > 3 && !ft_stack_is_sorted((**stack_a)))
-		ft_pb();
+		ft_pb(&(**stack_a), &(**stack_b));
 	if (stack_length > 3 && !ft_stack_is_sorted((**stack_a)))
-		ft_pb();
+		ft_pb(&(**stack_a), &(**stack_b));
 	while (stack_length > 3 && !ft_stack_is_sorted((**stack_a)))
 	{
 
 	}
-	ft_stack_sort_3();
+	ft_stack_sort_3(&(**stack_a));
 	while ()
 	{
 

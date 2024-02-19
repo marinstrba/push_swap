@@ -6,7 +6,7 @@
 /*   By: mstrba <mstrba@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 20:14:47 by maurian           #+#    #+#             */
-/*   Updated: 2024/02/19 09:56:52 by mstrba           ###   ########.fr       */
+/*   Updated: 2024/02/19 10:45:46 by mstrba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,27 +66,24 @@ void	ft_rra(t_stack **stack)
 	*stack = last_node;
 }
 
-// void  ft_ss()
-// {
-  
-// }
-
-// void  ft_rr()
-// {
-  
-// }
-
-// void  ft_rrr()
-// {
-  
-// }
-
-// void  ft_pa()
-// {
-  
-// }
-
-void  ft_pb()
+void	ft_pa(t_stack	**stack_a, t_stack	**stack_b)
 {
-  
+	t_stack	*swapped_node;
+
+	swapped_node = (*stack_b);
+	ft_add_node((*stack_b)->value, &(*stack_a));
+	*stack_b = (*stack_b)->next;
+	free((*stack_b)->prev);
+	(*stack_b)->prev = NULL;
+}
+
+void	ft_pb(t_stack	**stack_a, t_stack	**stack_b)
+{
+	t_stack	*swapped_node;
+
+	swapped_node = (*stack_a);
+	ft_add_node((*stack_a)->value, &(*stack_b));
+	*stack_a = (*stack_a)->next;
+	free((*stack_a)->prev);
+	(*stack_a)->prev = NULL;
 }

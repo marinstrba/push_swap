@@ -6,7 +6,7 @@
 /*   By: mstrba <mstrba@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 19:51:28 by maurian           #+#    #+#             */
-/*   Updated: 2024/02/19 14:30:48 by mstrba           ###   ########.fr       */
+/*   Updated: 2024/02/19 15:06:31 by mstrba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void	ft_stack_sort_3(t_stack ***stack)
 	}
 }
 
+// update indexes after each action in operations
 void	ft_stack_sort_n(t_stack ***stack_a, t_stack ***stack_b)
 {
 	size_t	stack_length;
@@ -63,6 +64,7 @@ void	ft_stack_sort_n(t_stack ***stack_a, t_stack ***stack_b)
 		ft_move_b_to_a(&(**stack_a), &(**stack_b));
 	}
 	ft_set_index(&(**stack_a));
+	ft_min_on_top(&(**stack_a));
 }
 
 void	ft_sort(t_stack **stack_a, t_stack **stack_b)

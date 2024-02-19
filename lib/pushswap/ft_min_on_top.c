@@ -1,36 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_set_cheapest.c                                  :+:      :+:    :+:   */
+/*   ft_min_on_top.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mstrba <mstrba@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/19 14:23:44 by mstrba            #+#    #+#             */
-/*   Updated: 2024/02/19 14:38:05 by mstrba           ###   ########.fr       */
+/*   Created: 2024/02/19 15:00:41 by mstrba            #+#    #+#             */
+/*   Updated: 2024/02/19 15:05:53 by mstrba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
 #include "../libft/libft.h"
 
-void	ft_set_cheapest(t_stack	**stack)
+void	ft_min_on_top(t_stack	**stack)
 {
 	t_stack	*tmp;
-	long	cheapest_value;
-	t_stack	*cheapest_node;
 
-	if (!(*stack))
-		return ;
 	tmp = (*stack);
-	cheapest_value = INT_MAX;
-	while (tmp != NULL)
+	while (tmp->value != ft_find_min(tmp))
 	{
-		if (tmp->push_cost < cheapest_value)
-		{
-			cheapest_value = tmp->push_cost;
-			cheapest_node = tmp;
-		}
-		tmp = tmp->next;
+		if (ft_find_min(tmp)->above_median)
+			ft_ra(&tmp, false, 'a');
+		else
+			ft_rra(&tmp, false, 'a');
 	}
-	cheapest_node->cheapest = true;
 }

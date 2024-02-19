@@ -6,7 +6,7 @@
 /*   By: mstrba <mstrba@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 20:14:47 by maurian           #+#    #+#             */
-/*   Updated: 2024/02/19 13:04:13 by mstrba           ###   ########.fr       */
+/*   Updated: 2024/02/19 15:08:24 by mstrba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void	ft_sa(t_stack **stack, bool	print, char letter)
 	*stack = second_node;
 	if (print)
 		printf("s%c\n", letter);
+	ft_set_index(&(*stack));
 }
 
 void	ft_ra(t_stack **stack, bool	print, char letter)
@@ -50,6 +51,7 @@ void	ft_ra(t_stack **stack, bool	print, char letter)
 	*stack = second_node;
 	if (print)
 		printf("s%c\n", letter);
+	ft_set_index(&(*stack));
 }
 
 void	ft_rra(t_stack **stack, bool	print, char letter)
@@ -70,6 +72,7 @@ void	ft_rra(t_stack **stack, bool	print, char letter)
 	*stack = last_node;
 	if (print)
 		printf("s%c\n", letter);
+	ft_set_index(&(*stack));
 }
 
 void	ft_pa(t_stack	**stack_a, t_stack	**stack_b, bool	print)
@@ -83,6 +86,8 @@ void	ft_pa(t_stack	**stack_a, t_stack	**stack_b, bool	print)
 	(*stack_b)->prev = NULL;
 	if (print)
 		ft_putstr("pa\n");
+	ft_set_index(&(*stack_a));
+	ft_set_index(&(*stack_b));
 }
 
 void	ft_pb(t_stack	**stack_a, t_stack	**stack_b, bool	print)
@@ -96,4 +101,6 @@ void	ft_pb(t_stack	**stack_a, t_stack	**stack_b, bool	print)
 	(*stack_a)->prev = NULL;
 	if (print)
 		ft_putstr("pb\n");
+	ft_set_index(&(*stack_a));
+	ft_set_index(&(*stack_b));
 }

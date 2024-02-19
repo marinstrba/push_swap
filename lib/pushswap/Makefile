@@ -12,12 +12,12 @@ SRCS = ft_add_node.c \
 			ft_find_max.c \
 			ft_get_cheapest.c \
 			ft_set_index.c \
-			ft_cost_analysis_a.c \
-			ft_cost_analysis_b.c \
-			ft_find_target_a.c \
-			ft_find_target_b.c \
+			ft_cost_analysis.c \
+			ft_find_target.c \
 			ft_has_duplicate.c \
-			ft_set_cheapest.c
+			ft_set_cheapest.c \
+			ft_move.c \
+			ft_min_on_top.c
 OBJS = $(SRCS:.c=.o)
 
 $(NAME): $(OBJS)

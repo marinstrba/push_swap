@@ -6,7 +6,7 @@
 /*   By: mstrba <mstrba@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 20:14:47 by maurian           #+#    #+#             */
-/*   Updated: 2024/02/19 10:45:46 by mstrba           ###   ########.fr       */
+/*   Updated: 2024/02/19 10:50:04 by mstrba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,25 @@ void	ft_rra(t_stack **stack)
 	second_to_last_node->next = NULL;
 	*stack = last_node;
 }
+
+void	ft_ss(t_stack	**stack_a, t_stack	**stack_b)
+{
+	ft_sa(&(*stack_a));
+	ft_sa(&(*stack_b));
+}
+
+void	ft_rr(t_stack	**stack_a, t_stack	**stack_b)
+{
+	ft_ra(&(*stack_a));
+	ft_ra(&(*stack_b));
+}
+
+void	ft_rrr(t_stack	**stack_a, t_stack	**stack_b)
+{
+	ft_rra(&(*stack_a));
+	ft_rra(&(*stack_b));
+}
+
 
 void	ft_pa(t_stack	**stack_a, t_stack	**stack_b)
 {

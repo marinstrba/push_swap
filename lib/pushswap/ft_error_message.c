@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_error_message.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maurian <maurian@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mstrba <mstrba@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 22:23:18 by maurian           #+#    #+#             */
-/*   Updated: 2024/02/17 23:11:35 by maurian          ###   ########.fr       */
+/*   Updated: 2024/02/19 10:04:48 by mstrba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
 #include "../libft/libft.h"
 
-void  ft_error_message(void)
+void	ft_error_message(void)
 {
-  ft_putstr("Error\n");
-  exit(-1);
+	ft_putstr("Error\n");
+	exit(-1);
 }

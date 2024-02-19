@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maurian <maurian@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mstrba <mstrba@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 21:07:13 by maurian           #+#    #+#             */
-/*   Updated: 2024/02/18 19:44:33 by maurian          ###   ########.fr       */
+/*   Updated: 2024/02/19 10:10:31 by mstrba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,14 @@
 # include <limits.h>
 # include "../pushswap/pushswap.h"
 
-int	ft_isdigit(int c);
+int		ft_isdigit(int c);
 void	ft_putstr(char *s);
-void ft_free_arr(char **arr);
-int	ft_atoi(const char *str);
-void ft_free_list(t_stack *stack);
-int ft_check_number(char *number);
+void	ft_free_arr(char **arr);
+int		ft_atoi(const char *str);
+void	ft_free_list(t_stack *stack);
+int		ft_check_number(char *number);
 size_t	ft_strlen(const char *str);
-void ft_print_stack(t_stack *stack);
+void	ft_print_stack(t_stack *stack);
 char	**ft_split(char const *s, char c);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_add_node.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mstrba <mstrba@student.42.fr>              +#+  +:+       +#+        */
+/*   By: maurian <maurian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 20:49:02 by maurian           #+#    #+#             */
-/*   Updated: 2024/02/19 17:02:46 by mstrba           ###   ########.fr       */
+/*   Updated: 2024/02/19 22:48:08 by maurian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,8 @@ void	ft_add_node(long number, t_stack	**stack)
 	if (number > INT_MAX || number < INT_MIN)
 	{
 		ft_free_list((*stack));
-		ft_putstr("Integer overflow.");
-		printf("%ld\n", number);
-		exit (-1);
+		free(new_node);
+		ft_error_message();
 	}
 	ft_init_stack(&new_node, (int)number);
 	if (*stack == NULL)

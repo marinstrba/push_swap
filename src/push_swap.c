@@ -6,7 +6,7 @@
 /*   By: maurian <maurian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 18:47:39 by maurian           #+#    #+#             */
-/*   Updated: 2024/02/19 21:14:40 by maurian          ###   ########.fr       */
+/*   Updated: 2024/02/19 22:50:50 by maurian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,10 @@ int	main(int argc, char	**argv)
 	stack_a = NULL;
 	stack_b = NULL;
 	stack_a = args_checker(argc, argv);
-	if (ft_stack_length(stack_a) == 1)
-	{
-		ft_print_stack(stack_a);
-		ft_free_list(stack_a);
-		return (EXIT_SUCCESS);
-	}
 	if (ft_has_duplicate(stack_a))
 	{
 		ft_free_list(stack_a);
+		ft_error_message();
 		return (EXIT_FAILURE);
 	}
 	ft_sort(&stack_a, &stack_b);
@@ -49,9 +44,7 @@ t_stack	*args_checker(int argc, char **argv)
 
 	index = 1;
 	stack = NULL;
-	if (argc == 1)
-		ft_error_message();
-	else if (argc == 2)
+	if (argc == 2)
 		return (ft_arg_to_node(argv));
 	else if (argc > 2)
 	{
@@ -60,7 +53,10 @@ t_stack	*args_checker(int argc, char **argv)
 			if (ft_check_number(argv[index]))
 				ft_add_node(atol(argv[index]), &stack);
 			else
+			{
+				ft_free_list(stack);
 				ft_error_message();
+			}
 			index++;
 		}
 	}

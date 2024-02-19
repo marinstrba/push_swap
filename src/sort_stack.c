@@ -6,7 +6,7 @@
 /*   By: maurian <maurian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 19:51:28 by maurian           #+#    #+#             */
-/*   Updated: 2024/02/19 22:36:29 by maurian          ###   ########.fr       */
+/*   Updated: 2024/02/19 22:37:08 by maurian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	ft_stack_sort_n(t_stack ***stack_a, t_stack ***stack_b)
 	if (stack_length-- > 3 && !ft_stack_is_sorted((**stack_a)))
 		ft_pb(&(**stack_a), &(**stack_b), true);
 	while (stack_length-- > 3 && !ft_stack_is_sorted((**stack_a)))
-		ft_prepare_stack_a(&(**stack_a),&(**stack_b));
+		ft_prepare_stack_a(&(**stack_a), &(**stack_b));
 	ft_stack_sort_3(&(*stack_a));
 	while ((**stack_b))
 	{

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_arg_to_node.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mstrba <mstrba@student.42.fr>              +#+  +:+       +#+        */
+/*   By: maurian <maurian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 20:59:15 by maurian           #+#    #+#             */
-/*   Updated: 2024/02/19 10:06:10 by mstrba           ###   ########.fr       */
+/*   Updated: 2024/02/19 22:48:58 by maurian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ t_stack	*ft_arg_to_node(char	**argv)
 	t_stack		*stack;
 
 	if (is_string_empty_or_delim(argv[1], ' '))
-		ft_error_message();
+		exit (-1);
 	numbers = ft_split(argv[1], ' ');
 	if (numbers == NULL || numbers[0] == NULL)
 	{
@@ -43,9 +43,12 @@ t_stack	*ft_arg_to_node(char	**argv)
 	while (*numbers)
 	{
 		if (ft_check_number(*numbers))
-			ft_add_node(ft_atoi(*numbers), &stack);
+			ft_add_node(ft_atol(*numbers), &stack);
 		else
+		{
+			ft_free_list(stack);
 			ft_error_message();
+		}
 		numbers++;
 	}
 	ft_free_arr(numbers);

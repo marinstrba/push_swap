@@ -6,7 +6,7 @@
 /*   By: mstrba <mstrba@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 20:14:47 by maurian           #+#    #+#             */
-/*   Updated: 2024/02/19 15:08:24 by mstrba           ###   ########.fr       */
+/*   Updated: 2024/02/19 15:29:47 by mstrba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ void	ft_ra(t_stack **stack, bool	print, char letter)
 	t_stack	*second_node;
 	t_stack	*last_node;
 
+	if (!(*stack) || !(*stack)->next)
+		return ;
 	first_node = (*stack);
 	second_node = first_node->next;
 	last_node = first_node;
@@ -60,6 +62,8 @@ void	ft_rra(t_stack **stack, bool	print, char letter)
 	t_stack	*second_to_last_node;
 	t_stack	*last_node;
 
+	if (!(*stack) || !(*stack)->next)
+		return ;
 	first_node = (*stack);
 	last_node = first_node;
 	while (last_node->next != NULL)
@@ -79,6 +83,8 @@ void	ft_pa(t_stack	**stack_a, t_stack	**stack_b, bool	print)
 {
 	t_stack	*swapped_node;
 
+	if (!(*stack_b))
+		return ;
 	swapped_node = (*stack_b);
 	ft_add_node((*stack_b)->value, &(*stack_a));
 	*stack_b = (*stack_b)->next;
@@ -94,6 +100,8 @@ void	ft_pb(t_stack	**stack_a, t_stack	**stack_b, bool	print)
 {
 	t_stack	*swapped_node;
 
+	if (!(*stack_a))
+		return ;
 	swapped_node = (*stack_a);
 	ft_add_node((*stack_a)->value, &(*stack_b));
 	*stack_a = (*stack_a)->next;

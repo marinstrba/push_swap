@@ -6,7 +6,7 @@
 /*   By: mstrba <mstrba@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 20:55:40 by maurian           #+#    #+#             */
-/*   Updated: 2024/02/19 15:35:56 by mstrba           ###   ########.fr       */
+/*   Updated: 2024/02/22 15:01:56 by mstrba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <limits.h>
 # include "../lib/pushswap/pushswap.h"
 # include "../lib/libft/libft.h"
+# include "../lib/printf/libftprintf.h"
 
 void	ft_sa(t_stack **stack, bool	print, char letter);
 void	ft_ra(t_stack **stack, bool	print, char letter);

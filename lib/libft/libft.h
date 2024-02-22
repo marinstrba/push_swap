@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maurian <maurian@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mstrba <mstrba@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 21:07:13 by maurian           #+#    #+#             */
-/*   Updated: 2024/02/19 22:41:43 by maurian          ###   ########.fr       */
+/*   Updated: 2024/02/22 15:03:35 by mstrba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 # include "../pushswap/pushswap.h"
 
 int		ft_isdigit(int c);
-void	ft_putstr(char *s);
 void	ft_free_arr(char **arr);
 long	ft_atol(const char *str);
 void	ft_free_list(t_stack *stack);

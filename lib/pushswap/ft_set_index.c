@@ -6,7 +6,7 @@
 /*   By: mstrba <mstrba@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 12:11:55 by mstrba            #+#    #+#             */
-/*   Updated: 2024/02/22 13:02:57 by mstrba           ###   ########.fr       */
+/*   Updated: 2024/02/22 15:40:40 by mstrba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_set_index(t_stack	**stack)
 
 	if (!(*stack))
 		return ;
-	index = 0;
+	index = 1;
 	tmp = (*stack);
 	median = ft_stack_length((*stack)) / 2;
 	while (tmp != NULL)

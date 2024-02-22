@@ -58,6 +58,7 @@
   "C_Cpp_Runner.msvcSecureNoWarnings": false,
   "files.associations": {
     "libft.h": "c",
-    "pushswap.h": "c"
+    "pushswap.h": "c",
+    "libftprintf.h": "c"
   }
 }

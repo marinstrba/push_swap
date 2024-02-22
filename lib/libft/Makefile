@@ -4,7 +4,6 @@ CFLAGS = -Wall -Wextra -Werror
 NAME = libft.a
 
 SRCS = ft_atol.c \
-       ft_putstr.c \
        ft_check_number.c \
        ft_isdigit.c	\
 		ft_split.c \

@@ -6,7 +6,7 @@
 /*   By: mstrba <mstrba@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 19:51:28 by maurian           #+#    #+#             */
-/*   Updated: 2024/02/22 13:51:06 by mstrba           ###   ########.fr       */
+/*   Updated: 2024/02/22 16:18:00 by mstrba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ void	ft_prepare_stack_a(t_stack **stack_a, t_stack **stack_b)
 	ft_find_target_a(&(*stack_a), &(*stack_b));
 	ft_cost_analysis_a(&(*stack_a), &(*stack_b));
 	ft_set_cheapest(&(*stack_a));
-	ft_move_a_to_b(&(*stack_a), &(*stack_b));
 }
 
 void	ft_stack_sort_2(t_stack ***stack)
@@ -54,7 +53,10 @@ void	ft_stack_sort_n(t_stack ***stack_a, t_stack ***stack_b)
 	if (stack_length-- > 3 && !ft_stack_is_sorted((**stack_a)))
 		ft_pb(&(**stack_a), &(**stack_b), true);
 	while (stack_length-- > 3 && !ft_stack_is_sorted((**stack_a)))
+	{
 		ft_prepare_stack_a(&(**stack_a), &(**stack_b));
+		ft_move_a_to_b(&(**stack_a), &(**stack_b));
+	}
 	ft_stack_sort_3(&(*stack_a));
 	while ((**stack_b))
 	{

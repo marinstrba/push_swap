@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_min_on_top.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maurian <maurian@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mstrba <mstrba@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 15:00:41 by mstrba            #+#    #+#             */
-/*   Updated: 2024/02/19 21:05:01 by maurian          ###   ########.fr       */
+/*   Updated: 2024/02/22 16:18:50 by mstrba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ void	ft_min_on_top(t_stack	**stack)
 	while ((*stack)->value != ft_find_min((*stack))->value)
 	{
 		if (ft_find_min((*stack))->above_median)
-			ft_ra(&(*stack), false, 'a');
+			ft_ra(&(*stack), true, 'a');
 		else
-			ft_rra(&(*stack), false, 'a');
+			ft_rra(&(*stack), true, 'a');
 	}
 }

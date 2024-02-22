@@ -6,7 +6,7 @@
 /*   By: mstrba <mstrba@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 18:47:39 by maurian           #+#    #+#             */
-/*   Updated: 2024/02/22 14:50:42 by mstrba           ###   ########.fr       */
+/*   Updated: 2024/02/22 16:13:54 by mstrba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ int	main(int argc, char	**argv)
 	}
 	ft_sort(&stack_a, &stack_b);
 	ft_free_list(stack_a);
-	ft_free_list(stack_b);
 	return (EXIT_SUCCESS);
 }
 

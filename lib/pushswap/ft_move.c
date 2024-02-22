@@ -6,7 +6,7 @@
 /*   By: mstrba <mstrba@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 14:38:48 by mstrba            #+#    #+#             */
-/*   Updated: 2024/02/22 14:50:26 by mstrba           ###   ########.fr       */
+/*   Updated: 2024/02/22 16:13:39 by mstrba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,19 +39,9 @@ void	ft_prepare_for_push(t_stack	**stack, t_stack	*top_node, char name)
 {
 	while ((*stack) != top_node)
 	{
-		if (name == 'a')
-		{
-			if (top_node->above_median)
-				ft_ra(&(*stack), true, 'a');
-			else
-				ft_rra(&(*stack), true, 'a');
-		}
-		else if (name == 'b')
-		{
-			if (top_node->above_median)
-				ft_ra(&(*stack), true, 'b');
-			else
-				ft_rra(&(*stack), true, 'b');
-		}
+		if (top_node->above_median)
+			ft_ra(&(*stack), true, name);
+		else
+			ft_rra(&(*stack), true, name);
 	}
 }

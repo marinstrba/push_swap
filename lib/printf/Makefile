@@ -1,48 +1,46 @@
+CC = gcc
+CFLAGS = -Wall -Werror -Wextra
+
 NAME = printf.a
-CC = cc
-CFLAGS = -Wall -Werror -Wextra -g3
-AR = ar rcs
-SRC = ft_putchar \
-	ft_printf \
-	ft_print_format \
-	ft_check_format \
-	ft_correct_format \
-	ft_print_str \
-	ft_pdec \
-	ft_pint \
-	ft_pexu \
-	ft_pvoid \
-	ft_pchar \
-	ft_phexl \
-	ft_pstr \
-	ft_pudec \
-	ft_putchar \
-	ft_strlcpy \
-	ft_putnbr \
-	ft_print_num \
-	ft_puthex \
-	ft_putstr \
-	ft_putunbr \
-	ft_puthexlu \
-	ft_strlen \
 
-SRCS = $(addsuffix .c, $(SRC))
-OBJS = $(addsuffix .o, $(SRC))
+SRCS = ft_putchar.c \
+	ft_printf.c \
+	ft_print_format.c \
+	ft_check_format.c \
+	ft_correct_format.c \
+	ft_print_str.c \
+	ft_pdec.c \
+	ft_pint.c \
+	ft_pexu.c \
+	ft_pvoid.c \
+	ft_pchar.c \
+	ft_phexl.c \
+	ft_pstr.c \
+	ft_pudec.c \
+	ft_putchar.c \
+	ft_strlcpy.c \
+	ft_putnbr.c \
+	ft_print_num.c \
+	ft_puthex.c \
+	ft_putstr.c \
+	ft_putunbr.c \
+	ft_puthexlu.c \
+	ft_strlen.c \
 
-.c.o:
-	$(CC) $(CFLAGS) -c -o $@ $<
+OBJS = $(SRCS:.c=.o)
 
 $(NAME): $(OBJS)
-	$(AR) $@ $^
+	ar rcs $(NAME) $(OBJS)
 
-all: $(NAME)
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f *.o
+	rm -f $(OBJS)
 
 fclean: clean
 	rm -f $(NAME)
 
-re: clean all
+re: fclean all
 
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re

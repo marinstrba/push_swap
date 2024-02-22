@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   operations.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maurian <maurian@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mstrba <mstrba@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 20:14:47 by maurian           #+#    #+#             */
-/*   Updated: 2024/02/19 23:39:07 by maurian          ###   ########.fr       */
+/*   Updated: 2024/02/22 14:53:03 by mstrba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	ft_sa(t_stack **stack, bool	print, char letter)
 	*stack = second_node;
 	print = true;
 	if (print)
-		printf("s%c\n", letter);
+		ft_printf("s%c\n", letter);
 	ft_set_index(&(*stack));
 }
 
@@ -54,7 +54,7 @@ void	ft_ra(t_stack **stack, bool	print, char letter)
 	*stack = second_node;
 	print = true;
 	if (print)
-		printf("r%c\n", letter);
+		ft_printf("r%c\n", letter);
 	ft_set_index(&(*stack));
 }
 
@@ -71,15 +71,15 @@ void	ft_rra(t_stack **stack, bool	print, char letter)
 	while (last_node->next != NULL)
 		last_node = last_node->next;
 	second_to_last_node = last_node->prev;
-  if (second_to_last_node)
-    second_to_last_node->next = NULL;
-  last_node->next = first_node;
-  last_node->prev = NULL;
-  first_node->prev = last_node;
+	if (second_to_last_node)
+		second_to_last_node->next = NULL;
+	last_node->next = first_node;
+	last_node->prev = NULL;
+	first_node->prev = last_node;
 	(*stack) = last_node;
 	print = true;
 	if (print)
-		printf("rr%c\n", letter);
+		ft_printf("rr%c\n", letter);
 	ft_set_index(&(*stack));
 }
 
@@ -99,7 +99,7 @@ void	ft_pa(t_stack	**stack_a, t_stack	**stack_b, bool	print)
 	(*stack_a) = swapped_node;
 	print = true;
 	if (print)
-		ft_putstr("pa\n");
+		ft_printf("pa\n");
 	ft_set_index(&(*stack_a));
 	ft_set_index(&(*stack_b));
 }
@@ -120,7 +120,7 @@ void	ft_pb(t_stack	**stack_a, t_stack	**stack_b, bool	print)
 	(*stack_b) = swapped_node;
 	print = true;
 	if (print)
-		ft_putstr("pb\n");
+		ft_printf("pb\n");
 	ft_set_index(&(*stack_a));
 	ft_set_index(&(*stack_b));
 }

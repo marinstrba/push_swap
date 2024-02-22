@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maurian <maurian@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mstrba <mstrba@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 19:51:28 by maurian           #+#    #+#             */
-/*   Updated: 2024/02/19 22:37:08 by maurian          ###   ########.fr       */
+/*   Updated: 2024/02/22 13:51:06 by mstrba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_prepare_stack_a(t_stack **stack_a, t_stack **stack_b)
 	ft_set_index(&(*stack_b));
 	ft_find_target_a(&(*stack_a), &(*stack_b));
 	ft_cost_analysis_a(&(*stack_a), &(*stack_b));
-	ft_set_cheapest(&(*stack_a)); 
+	ft_set_cheapest(&(*stack_a));
 	ft_move_a_to_b(&(*stack_a), &(*stack_b));
 }
 
@@ -31,7 +31,7 @@ void	ft_stack_sort_2(t_stack ***stack)
 void	ft_stack_sort_3(t_stack ***stack)
 {
 	t_stack	*biggest_node;
-  //ft_print_stack((**stack));
+
 	biggest_node = ft_find_max((**stack));
 	while (!ft_stack_is_sorted((**stack)))
 	{

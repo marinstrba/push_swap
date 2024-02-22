@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_find_target.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maurian <maurian@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mstrba <mstrba@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 12:17:31 by mstrba            #+#    #+#             */
-/*   Updated: 2024/02/19 21:25:14 by maurian          ###   ########.fr       */
+/*   Updated: 2024/02/22 13:03:36 by mstrba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 void	ft_find_target_a(t_stack	**stack_a, t_stack	**stack_b)
 {
-	t_stack	*tmp;
-	t_stack	*target_node;
-	t_stack	*b_curr;
+	t_stack		*tmp;
+	t_stack		*target_node;
+	t_stack		*b_curr;
 	long		match;
 
 	tmp = (*stack_a);

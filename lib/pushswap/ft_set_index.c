@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_set_index.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maurian <maurian@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mstrba <mstrba@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 12:11:55 by mstrba            #+#    #+#             */
-/*   Updated: 2024/02/19 21:21:18 by maurian          ###   ########.fr       */
+/*   Updated: 2024/02/22 13:02:57 by mstrba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_set_index(t_stack	**stack)
 {
 	int			index;
 	int			median;
-	t_stack	*tmp;
+	t_stack		*tmp;
 
 	if (!(*stack))
 		return ;

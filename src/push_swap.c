@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maurian <maurian@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mstrba <mstrba@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 18:47:39 by maurian           #+#    #+#             */
-/*   Updated: 2024/02/19 23:39:54 by maurian          ###   ########.fr       */
+/*   Updated: 2024/02/22 14:50:42 by mstrba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ int	main(int argc, char	**argv)
 		return (EXIT_FAILURE);
 	}
 	ft_sort(&stack_a, &stack_b);
-	//ft_print_stack(stack_a);
 	ft_free_list(stack_a);
 	ft_free_list(stack_b);
 	return (EXIT_SUCCESS);
@@ -51,7 +50,7 @@ t_stack	*args_checker(int argc, char **argv)
 		while (index < argc)
 		{
 			if (ft_check_number(argv[index]))
-				ft_add_node(atol(argv[index]), &stack);
+				ft_add_node(ft_atol(argv[index]), &stack);
 			else
 			{
 				ft_free_list(stack);

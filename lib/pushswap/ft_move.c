@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_move.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maurian <maurian@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mstrba <mstrba@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 14:38:48 by mstrba            #+#    #+#             */
-/*   Updated: 2024/02/19 22:31:22 by maurian          ###   ########.fr       */
+/*   Updated: 2024/02/22 14:50:26 by mstrba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	ft_prepare_for_push(t_stack	**stack, t_stack	*top_node, char name)
 			if (top_node->above_median)
 				ft_ra(&(*stack), true, 'b');
 			else
-				ft_rra(&(*stack), true, 'b');		
+				ft_rra(&(*stack), true, 'b');
 		}
 	}
 }

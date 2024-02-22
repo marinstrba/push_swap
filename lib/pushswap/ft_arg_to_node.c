@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_arg_to_node.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maurian <maurian@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mstrba <mstrba@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 20:59:15 by maurian           #+#    #+#             */
-/*   Updated: 2024/02/19 23:29:38 by maurian          ###   ########.fr       */
+/*   Updated: 2024/02/22 14:51:50 by mstrba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,6 @@ t_stack	*ft_arg_to_node(char	**argv)
 	if (is_string_empty_or_delim(argv[1], ' '))
 		exit (-1);
 	numbers = ft_split(argv[1], ' ');
-	if (numbers == NULL)
-	{
-		free(numbers);
-		return (NULL);
-	}
 	while (numbers[index])
 	{
 		if (ft_check_number(numbers[index]))
